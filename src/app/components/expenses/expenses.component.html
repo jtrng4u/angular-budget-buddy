@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>Expenses</h2>
+  <div *ngIf="getExpenses().length == 0">
+    <div>No Expenses</div>
+  </div>
+  <table *ngIf="getExpenses().length > 0">
+    <tr>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Amount</th>
+    </tr>
+
+    <tr *ngFor="let expense of getExpenses()">
+      <td>{{expense.description}}</td>
+      <td>{{expense.category}}</td>
+      <td>{{expense.amount | currency}}</td>
+    </tr>
+  </table>
+  <hr>
+</div>

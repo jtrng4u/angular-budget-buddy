@@ -1,0 +1,16 @@
+<div class="container">
+  <h3>Total Expense: {{totalExpense() | currency}}</h3>
+  <h3>Total Expense: {{totalBudget() | currency}}</h3>
+  <progress style="width: 100%" id="budgeProgress" value="{{totalExpense()}}"
+            max="{{totalBudget()}}"> {{totalExpense()}} </progress>
+  <hr>
+  <div *ngIf="categoryWiseExpenses().length > 0">
+    <button *ngIf="toggleCategoryView" (click)="setToggleCategoryView()">Hide Category wise expenses</button>
+    <div *ngIf="toggleCategoryView">
+      <div *ngFor="let category of categoryWiseExpenses()">
+        <p>{{category}}</p>
+      </div>
+    </div>
+    <button *ngIf="! toggleCategoryView" (click)="setToggleCategoryView()">Show Category wise expenses</button>
+  </div>
+</div>

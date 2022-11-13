@@ -1,0 +1,13 @@
+<div class="container">
+  <form (ngSubmit)="submitForm()" #form="ngForm">
+    <div class="mb-3">
+      <h2>Set Total Budget</h2>
+      <label for="totalBudget" class="form-label"></label>
+      <input name="totalBudget" id="totalBudget" class="form-control" [(ngModel)]="totalBudget" required>
+    </div>
+    <div class="mb-3">
+      <button (submit)="submitForm()" class="btn btn-primary" [disabled]="!form.valid">Set Budget</button>
+    </div>
+  </form>
+  <hr>
+</div>
